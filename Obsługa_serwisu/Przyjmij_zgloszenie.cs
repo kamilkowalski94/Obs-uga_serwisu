@@ -33,23 +33,23 @@ namespace serwis_komputerowy
 
         private void Przyjmij_zgloszenie_Load(object sender, EventArgs e)
         {
-            IDzTabeli = comboBoxObsluga.wczytajComboBoxZTabeli("dzialy", "Nazwa_działu", "id", comboBox1);
-            IDzTabeli3 = comboBoxObsluga.wczytajComboBoxZTabeli("klienci", "Firma", "id", comboBox3);
-            IDzTabeli2 = comboBoxObsluga.wczytajComboBoxZTabeli("pracownicy", "Login", "id", comboBox2);
+            IDzTabeli = comboBoxObsluga.wczytajComboBoxZTabeli("dzialy", "Nazwa_dzialu", "idDziali", comboBox1);
+            IDzTabeli3 = comboBoxObsluga.wczytajComboBoxZTabeli("klienci", "Fram", "idklient", comboBox3);
+            IDzTabeli2 = comboBoxObsluga.wczytajComboBoxZTabeli("pracownicy", "Login", "idPracownilka", comboBox2);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             PoloczenieMySQL polMySQL = new PoloczenieMySQL();
             MySqlConnection polaczenie = polMySQL.polacz();
-            string komenda = "INSERT INTO " + "przyjmij_zgloszenie" + "(id_praconik,id_klienta,id_działu,treść_zgłoszenia,temat_zgłoszenia) " 
+            string komenda = "INSERT INTO " + "zgloszenie" + "(idPracownika,idKlienta,idDzialu,Opis_Zgloszenia,tematZgloszenia) " 
             + "VALUES ('" + comboBox2.Text +"', '" +comboBox3.Text+"','" +comboBox1.Text+"','" +textBox2.Text+"','" +textBox1.Text+"');";
             MySqlCommand pytanie = new MySqlCommand(komenda, polaczenie);
             MySqlDataReader wynik;
             wynik = pytanie.ExecuteReader();
             polMySQL.zamknij();
             this.Hide();
-            this.Hide();
+     
             Przyjmij_zgloszenie form = new Przyjmij_zgloszenie();
             form.Show();
         }
@@ -65,5 +65,19 @@ namespace serwis_komputerowy
             String wybraneID = "";
             wybraneID = IDzTabeli2[comboBox2.SelectedIndex];
         }
+
+        private void button1_Click(object sender, EventArgs e)//dodawanie klienta
+        {
+            PoloczenieMySQL polMySQL = new PoloczenieMySQL();
+            MySqlConnection polaczenie = polMySQL.polacz();
+            string komenda = "INSERT INTO " + "klienci" + "(Imie,Nazwisko) "
+            + "VALUES ('" + comboBox2.Text + "', '" + comboBox3.Text + "','" + comboBox1.Text + "','" + textBox2.Text + "','" + textBox1.Text + "');";
+            MySqlCommand pytanie = new MySqlCommand(komenda, polaczenie);
+            MySqlDataReader wynik;
+            wynik = pytanie.ExecuteReader();
+            polMySQL.zamknij();
+        }
+
+     
     }
 }
