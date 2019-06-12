@@ -31,22 +31,25 @@
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxKlient = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // buttonDodaj
             // 
             this.buttonDodaj.Font = new System.Drawing.Font("OCR A Extended", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodaj.Location = new System.Drawing.Point(319, 267);
+            this.buttonDodaj.Location = new System.Drawing.Point(258, 186);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(102, 51);
             this.buttonDodaj.TabIndex = 0;
             this.buttonDodaj.Text = "Dodaj klienta";
             this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
             // textBox1
             // 
@@ -61,17 +64,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 2;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Klient indywidualny",
-            "Firma"});
-            this.checkedListBox1.Location = new System.Drawing.Point(2, 64);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(117, 34);
-            this.checkedListBox1.TabIndex = 3;
             // 
             // label1
             // 
@@ -107,16 +99,42 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Nazwa firmy";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(260, 142);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(177, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "NIP";
+            // 
+            // comboBoxKlient
+            // 
+            this.comboBoxKlient.FormattingEnabled = true;
+            this.comboBoxKlient.Location = new System.Drawing.Point(12, 51);
+            this.comboBoxKlient.Name = "comboBoxKlient";
+            this.comboBoxKlient.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKlient.TabIndex = 10;
+            // 
             // dodajKlienta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 330);
+            this.ClientSize = new System.Drawing.Size(395, 269);
+            this.Controls.Add(this.comboBoxKlient);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonDodaj);
@@ -132,10 +150,12 @@
         private System.Windows.Forms.Button buttonDodaj;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxKlient;
     }
 }

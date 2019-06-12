@@ -33,6 +33,7 @@
             this.buttonZaloguj = new System.Windows.Forms.Button();
             this.labelLogin = new System.Windows.Forms.Label();
             this.labelHasło = new System.Windows.Forms.Label();
+            this.buttonPassReset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxLogin
@@ -48,6 +49,7 @@
             this.textBoxHasło.Name = "textBoxHasło";
             this.textBoxHasło.Size = new System.Drawing.Size(100, 20);
             this.textBoxHasło.TabIndex = 1;
+            this.textBoxHasło.UseSystemPasswordChar = true;
             // 
             // buttonZaloguj
             // 
@@ -77,11 +79,22 @@
             this.labelHasło.TabIndex = 4;
             this.labelHasło.Text = "Hasło";
             // 
+            // buttonPassReset
+            // 
+            this.buttonPassReset.Location = new System.Drawing.Point(63, 140);
+            this.buttonPassReset.Name = "buttonPassReset";
+            this.buttonPassReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonPassReset.TabIndex = 5;
+            this.buttonPassReset.Text = "Reset hasła";
+            this.buttonPassReset.UseVisualStyleBackColor = true;
+            this.buttonPassReset.Click += new System.EventHandler(this.buttonPassReset_Click);
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(174, 174);
+            this.ClientSize = new System.Drawing.Size(210, 198);
+            this.Controls.Add(this.buttonPassReset);
             this.Controls.Add(this.labelHasło);
             this.Controls.Add(this.labelLogin);
             this.Controls.Add(this.buttonZaloguj);
@@ -101,5 +114,6 @@
         private System.Windows.Forms.Button buttonZaloguj;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.Label labelHasło;
+        private System.Windows.Forms.Button buttonPassReset;
     }
 }

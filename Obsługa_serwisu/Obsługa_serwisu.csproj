@@ -82,6 +82,7 @@
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Baza\PoloczenieMySQL.cs" />
+    <Compile Include="Outlook\MAPIFolder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przyjecie_zgloszenia.cs" />

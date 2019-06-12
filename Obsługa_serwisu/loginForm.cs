@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using Obsługa_serwisu;
+using System.Net.Mail;
 
 namespace serwis_komputerowy
 {
@@ -18,9 +19,25 @@ namespace serwis_komputerowy
         public loginForm()
         {
             InitializeComponent();
-          
+            buttonPassReset.Hide();
         }
-      
+
+
+
+        private void sendEmail()
+        {
+            //nie testowane, ide spać xd
+            MailMessage mailMessage = new MailMessage();
+            mailMessage.From = new MailAddress(" do założenia poczta");//od kogo
+            mailMessage.To.Add("do założenia skrzynka");
+            mailMessage.Subject = "Reset hasła";
+            mailMessage.Body = "Proszę o reset hasła dla użytkownika: " + textBoxLogin.Text;
+            mailMessage.IsBodyHtml = true;
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.Credentials = new System.Net.NetworkCredential("email nadawcy", "hasło");
+            smtpClient.Send(mailMessage);
+        }
 
         private void buttonZaloguj_Click(object sender, EventArgs e)
         {
@@ -54,12 +71,19 @@ namespace serwis_komputerowy
                 tryCount++;
                 if (tryCount >= 3)
                 {
-                    MessageBox.Show("Twoje konto zostąło zablokowane, skontaktuj się z Administratorem");
+                    MessageBox.Show("Twoje konto zostąło zablokowane, skontaktuj się z Administratorem.");
+                    sendEmail();
                     buttonZaloguj.Hide();
+                    buttonPassReset.Show();
                     
                 }
                 return;
             }
+
+        }
+
+        private void buttonPassReset_Click(object sender, EventArgs e)
+        {
 
         }
     }
