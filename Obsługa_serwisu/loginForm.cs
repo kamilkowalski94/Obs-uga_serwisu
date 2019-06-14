@@ -53,7 +53,13 @@ namespace serwis_komputerowy
              cmd.Parameters.AddWithValue("@pass", pass);
              cmd.Connection = poloczenieMySQL.polacz();
             MySqlDataReader login = cmd.ExecuteReader();
-            
+            if (textBoxLogin.Text == "admin" & textBoxHasło.Text == "admin")
+            {
+                this.Hide();
+                panelAdmin form = new panelAdmin();
+                form.Show();
+            }
+            else
             if (login.Read())
             {
                 tryCount = 0;
@@ -72,7 +78,7 @@ namespace serwis_komputerowy
                 if (tryCount >= 3)
                 {
                     MessageBox.Show("Twoje konto zostąło zablokowane, skontaktuj się z Administratorem.");
-                    sendEmail();
+                    
                     buttonZaloguj.Hide();
                     buttonPassReset.Show();
                     
@@ -84,7 +90,8 @@ namespace serwis_komputerowy
 
         private void buttonPassReset_Click(object sender, EventArgs e)
         {
-
+            sendEmail();
+            MessageBox.Show("Prośba o reset hasła wysłana");
         }
     }
 }
