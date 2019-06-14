@@ -25,7 +25,7 @@ namespace Obsługa_serwisu
             PoloczenieMySQL polMySQL = new PoloczenieMySQL();
             MySqlConnection polaczenie = polMySQL.polacz();
             string komenda = "INSERT INTO " + "pracownicy" + "(haslo) "
-            + "VALUES ('" +  textBoxPass.Text + "')  WHERE login ="+textBoxLogin.Text+";";
+            + "VALUES ('" +  textBoxPass.Text + "')  WHERE login = '"+textBoxLogin.Text+"';";
             MySqlCommand pytanie = new MySqlCommand(komenda, polaczenie);
             MySqlDataReader wynik;
             MessageBox.Show("Klient dodany");
@@ -62,6 +62,25 @@ namespace Obsługa_serwisu
                 return;
             }
         }
-       
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PoloczenieMySQL polMySQL = new PoloczenieMySQL();
+            MySqlConnection polaczenie = polMySQL.polacz();
+            string komenda = "INSERT INTO " + "pracownicy" + "(Imie,Nazwisko,Adres,login,haslo) "
+            + "VALUES ('" + textBoxNameAdd.Text + "', '" + textBoxSuAdd.Text + "','" 
+            + textBoxAdrAdd.Text + "','" + textBox5LoginAdd.Text + "','"+textBoxPassAdd+ "');" +
+            " INSERT INTO " + "dzialy" + "(Nazwa_dzialu) " + "VALUES ('" + textBoxDzAdd.Text + "');";
+          
+            MySqlCommand pytanie = new MySqlCommand(komenda, polaczenie);
+          
+            MySqlDataReader wynik;
+            
+
+            wynik = pytanie.ExecuteReader();
+        
+            polMySQL.zamknij();
+            MessageBox.Show("Klient dodany");
+        }
     }
 }
