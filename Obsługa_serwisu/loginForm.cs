@@ -28,14 +28,14 @@ namespace serwis_komputerowy
         {
             //nie testowane, ide spać xd
             MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(" do założenia poczta");//od kogo
-            mailMessage.To.Add("do założenia skrzynka");
+            mailMessage.From = new MailAddress("pracownik1repair@gmail.com");//od kogo
+            mailMessage.To.Add("tomaszrosa12345@gmail.com");
             mailMessage.Subject = "Reset hasła";
             mailMessage.Body = "Proszę o reset hasła dla użytkownika: " + textBoxLogin.Text;
             mailMessage.IsBodyHtml = true;
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new System.Net.NetworkCredential("email nadawcy", "hasło");
+            smtpClient.Credentials = new System.Net.NetworkCredential("pracownik1repair@gmail.com", "zpizaq1@WSX");
             smtpClient.Send(mailMessage);
         }
 

@@ -101,7 +101,7 @@
             this.Controls.Add(this.textBoxHasło);
             this.Controls.Add(this.textBoxLogin);
             this.Name = "loginForm";
-            this.Text = "loginForm";
+            this.Text = "REP-AIR";
             this.ResumeLayout(false);
             this.PerformLayout();
 
