@@ -93,7 +93,7 @@ namespace Obsługa_serwisu
             wynik = pytanie.ExecuteReader();
         
             polMySQL.zamknij();
-            MessageBox.Show("Klient dodany");
+            MessageBox.Show("Pracownik dodany");
         }
     }
 }

@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data.Types;
 
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 namespace serwis_komputerowy
 {
     public partial class Przyjmij_zgloszenie : Form
@@ -78,6 +82,23 @@ namespace serwis_komputerowy
             polMySQL.zamknij();
         }
 
-     
+        private void buttonPdf_Click(object sender, EventArgs e)
+        {
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("Potwierdzenie " + comboBox3.Text+".pdf", FileMode.Create));
+            doc.Open();
+            Paragraph paragraf = new Paragraph("Opis problemu: \n"+textBox2.Text+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+                "Wyrażam zgodę na przetwarzanie moich danych osobowych " +
+                "dla potrzeb niezbędnych do realizacji zgłoszenia (zgodnie z ustawą z" +
+                " dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) " +
+                "oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia" +
+                " 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem " +
+                "danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy" +
+                " 95/46/WE (RODO))\n\n..................................");
+            doc.Add(paragraf);
+            doc.Close();
+
+
+        }
     }
 }
