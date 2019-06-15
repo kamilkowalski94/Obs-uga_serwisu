@@ -64,7 +64,7 @@ namespace serwis_komputerowy
             {
                 tryCount = 0;
                 this.Hide();
-                //Przyjmij_zgloszenie form = new Przyjmij_zgloszenie();
+               
                 Form1 form = new Form1();
                 form.Show();
                 

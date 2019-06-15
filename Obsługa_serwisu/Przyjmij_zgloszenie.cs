@@ -13,6 +13,7 @@ using MySql.Data.Types;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using Obsługa_serwisu;
 
 namespace serwis_komputerowy
 {
@@ -87,7 +88,7 @@ namespace serwis_komputerowy
             Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("Potwierdzenie " + comboBox3.Text+".pdf", FileMode.Create));
             doc.Open();
-            Paragraph paragraf = new Paragraph("Opis problemu: \n"+textBox2.Text+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
+            Paragraph paragraf = new Paragraph("Klient: "+comboBox3.Text+"\n\nZgłoszenie przyjęte przez: "+comboBox2.Text +"\n"+DateTime.Now+"\n\nOpis problemu: \n"+textBox2.Text+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" +
                 "Wyrażam zgodę na przetwarzanie moich danych osobowych " +
                 "dla potrzeb niezbędnych do realizacji zgłoszenia (zgodnie z ustawą z" +
                 " dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000) " +
@@ -99,6 +100,13 @@ namespace serwis_komputerowy
             doc.Close();
 
 
+        }
+
+        private void buttonPowrót_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
         }
     }
 }

@@ -95,5 +95,12 @@ namespace Obsługa_serwisu
             polMySQL.zamknij();
             MessageBox.Show("Pracownik dodany");
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelAdmin form = new panelAdmin();
+            form.Show();
+            this.Hide();
+        }
     }
 }

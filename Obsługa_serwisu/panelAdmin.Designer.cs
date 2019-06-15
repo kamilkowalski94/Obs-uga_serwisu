@@ -55,6 +55,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxLoginDel = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -126,7 +127,7 @@
             this.richTextBox2.BackColor = System.Drawing.SystemColors.Highlight;
             this.richTextBox2.Location = new System.Drawing.Point(295, 43);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(291, 240);
+            this.richTextBox2.Size = new System.Drawing.Size(390, 187);
             this.richTextBox2.TabIndex = 7;
             this.richTextBox2.Text = "";
             // 
@@ -161,7 +162,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(307, 166);
+            this.label7.Location = new System.Drawing.Point(505, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 13);
             this.label7.TabIndex = 12;
@@ -170,7 +171,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(304, 192);
+            this.label8.Location = new System.Drawing.Point(505, 110);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 13;
@@ -179,7 +180,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(304, 217);
+            this.label9.Location = new System.Drawing.Point(506, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 13);
             this.label9.TabIndex = 14;
@@ -188,7 +189,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(300, 242);
+            this.label10.Location = new System.Drawing.Point(503, 162);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
             this.label10.TabIndex = 15;
@@ -210,28 +211,28 @@
             // 
             // textBoxAdrAdd
             // 
-            this.textBoxAdrAdd.Location = new System.Drawing.Point(376, 168);
+            this.textBoxAdrAdd.Location = new System.Drawing.Point(545, 81);
             this.textBoxAdrAdd.Name = "textBoxAdrAdd";
             this.textBoxAdrAdd.Size = new System.Drawing.Size(100, 20);
             this.textBoxAdrAdd.TabIndex = 18;
             // 
             // textBoxDzAdd
             // 
-            this.textBoxDzAdd.Location = new System.Drawing.Point(376, 192);
+            this.textBoxDzAdd.Location = new System.Drawing.Point(545, 107);
             this.textBoxDzAdd.Name = "textBoxDzAdd";
             this.textBoxDzAdd.Size = new System.Drawing.Size(100, 20);
             this.textBoxDzAdd.TabIndex = 19;
             // 
             // textBox5LoginAdd
             // 
-            this.textBox5LoginAdd.Location = new System.Drawing.Point(376, 217);
+            this.textBox5LoginAdd.Location = new System.Drawing.Point(545, 133);
             this.textBox5LoginAdd.Name = "textBox5LoginAdd";
             this.textBox5LoginAdd.Size = new System.Drawing.Size(100, 20);
             this.textBox5LoginAdd.TabIndex = 20;
             // 
             // textBoxPassAdd
             // 
-            this.textBoxPassAdd.Location = new System.Drawing.Point(376, 243);
+            this.textBoxPassAdd.Location = new System.Drawing.Point(545, 159);
             this.textBoxPassAdd.Name = "textBoxPassAdd";
             this.textBoxPassAdd.Size = new System.Drawing.Size(100, 20);
             this.textBoxPassAdd.TabIndex = 21;
@@ -241,7 +242,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(482, 232);
+            this.button2.Location = new System.Drawing.Point(376, 152);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 31);
             this.button2.TabIndex = 22;
@@ -254,7 +255,7 @@
             this.richTextBox3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.richTextBox3.Location = new System.Drawing.Point(12, 258);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(208, 132);
+            this.richTextBox3.Size = new System.Drawing.Size(248, 132);
             this.richTextBox3.TabIndex = 23;
             this.richTextBox3.Text = "";
             // 
@@ -297,11 +298,22 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(400, 343);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(173, 46);
+            this.button4.TabIndex = 28;
+            this.button4.Text = "Powrót";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // panelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBoxLoginDel);
             this.Controls.Add(this.label12);
@@ -365,5 +377,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxLoginDel;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

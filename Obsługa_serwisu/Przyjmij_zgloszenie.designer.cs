@@ -41,6 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonPdf = new System.Windows.Forms.Button();
+            this.buttonPowrót = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -160,11 +161,22 @@
             this.buttonPdf.UseVisualStyleBackColor = true;
             this.buttonPdf.Click += new System.EventHandler(this.buttonPdf_Click);
             // 
+            // buttonPowrót
+            // 
+            this.buttonPowrót.Location = new System.Drawing.Point(463, 34);
+            this.buttonPowrót.Name = "buttonPowrót";
+            this.buttonPowrót.Size = new System.Drawing.Size(75, 23);
+            this.buttonPowrót.TabIndex = 13;
+            this.buttonPowrót.Text = "Powrót";
+            this.buttonPowrót.UseVisualStyleBackColor = true;
+            this.buttonPowrót.Click += new System.EventHandler(this.buttonPowrót_Click);
+            // 
             // Przyjmij_zgloszenie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 443);
+            this.Controls.Add(this.buttonPowrót);
             this.Controls.Add(this.buttonPdf);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
@@ -201,6 +213,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonPdf;
+        private System.Windows.Forms.Button buttonPowrót;
     }
 }
 
