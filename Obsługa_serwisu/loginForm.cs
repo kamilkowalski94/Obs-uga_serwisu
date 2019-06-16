@@ -26,7 +26,7 @@ namespace serwis_komputerowy
 
         private void sendEmail()
         {
-            //nie testowane, ide spać xd
+          
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress("pracownik1repair@gmail.com");//od kogo
             mailMessage.To.Add("tomaszrosa12345@gmail.com");
@@ -35,7 +35,7 @@ namespace serwis_komputerowy
             mailMessage.IsBodyHtml = true;
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new System.Net.NetworkCredential("pracownik1repair@gmail.com", "zpizaq1@WSX");
+            smtpClient.Credentials = new System.Net.NetworkCredential("pracownik1repair@gmail.com", "");//hasło odane bezpośrednio w kodzie
             smtpClient.Send(mailMessage);
         }
 
